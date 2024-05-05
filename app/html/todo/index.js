@@ -19,7 +19,7 @@ function startmoni_todo() {
       alert('期限を指定してください。')
     } else {
 
-      fetch('https://api.launchpencil.f5.si/todo/add/?user=' + username + '&pass=' + password + '&name=' + taskname + '&date=' + datedata, {
+      fetch('https://zikanwari.xsrv.jp/todoapi/add/?user=' + username + '&pass=' + password + '&name=' + taskname + '&date=' + datedata, {
         mode: 'cors'
       })
           .then(response => response.text())
@@ -57,7 +57,7 @@ function taskupdate() {
   document.querySelector(".table > div > div").style.borderColor = listline;
   document.querySelector("#setdata, #settask").style.backgroundColor = buttoncolor;
 
-  fetch(`https://api.launchpencil.f5.si/todo/?user=` + username + '&pass=' + password, {
+  fetch(`https://zikanwari.xsrv.jp/todoapi/?user=` + username + '&pass=' + password, {
     mode: 'cors'
   })
   .then(response => response.text())

@@ -17,13 +17,13 @@ const server = http.createServer((req, res) => {
         body = JSON.parse(body)
         
         const username = body.user;
-        const password = body.pass;
+        const password = body.pass.replace(/-/g, '');;
 
         const connection = mysql.createConnection({
-          host: '192.168.0.3',
-          user: username,
+          host: 'localhost',
+          user: 'zikanwari_' +  + username,
           password: password,
-          database: 'zikan'
+          database: 'zikanwari_zikan'
         });
 
 
@@ -76,13 +76,13 @@ const server = http.createServer((req, res) => {
     res.writeHead(200, {'Content-Type': 'text/html; charset=utf-8'});
     const queryObject = url.parse(req.url, true).query;
     const username = queryObject.user;
-    const password = queryObject.pass;
+    const password = queryObject.pass.replace(/-/g, '');;
 
     const connection = mysql.createConnection({
-      host: '192.168.0.3',
-      user: username,
+      host: 'localhost',
+      user: 'zikanwari_' +  + username,
       password: password,
-      database: 'zikan'
+      database: 'zikanwari_zikan'
     });
 
     if (req.url.startsWith('/zikanwari/change')) {
@@ -184,8 +184,8 @@ const server = http.createServer((req, res) => {
   }
 });
 
-server.listen(3000, () => {
-  console.log('Server running on port 3000');
+server.listen(3001, () => {
+  console.log('Server running on port 3001');
 });
 
 

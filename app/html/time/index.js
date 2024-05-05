@@ -12,7 +12,7 @@ function syncdata() {
         var password = localStorage.getItem('pass');
         customSelect.classList.add("selected");
         
-        fetch('https://api.launchpencil.f5.si/zikanwari/change/?user=' + username + '&pass=' + password + '&id=' + index + '&subject=' + this.value, {
+        fetch('https://zikanwari.xsrv.jp/zikanwari/change/?user=' + username + '&pass=' + password + '&id=' + index + '&subject=' + this.value, {
           mode: 'cors'
         })
         .then(response => response.text())
@@ -42,6 +42,8 @@ function update() {
     "英語E",
     "数学Ⅱ",
     "数学B",
+    "数学Ⅲ",
+    "数学C",
     "論国",
     "古典",
     "文国",
@@ -72,7 +74,7 @@ function update() {
     });
   }
 
-  fetch(`https://api.launchpencil.f5.si/zikanwari/?user=` + username + `&pass=` + password, {
+  fetch(`https://zikanwari.xsrv.jp/zikanwari/?user=` + username + `&pass=` + password, {
     mode: 'cors'
   })
   .then(response => response.text())

@@ -137,7 +137,7 @@ function checkuser(successcode) {
   var username = localStorage.getItem('user');
   var password = localStorage.getItem('pass');
 
-  fetch(`https://api.launchpencil.f5.si/zikanwari/?user=` + username + `&pass=` + password, {
+  fetch(`https://zikanwari.xsrv.jp/zikanwari/?user=` + username + `&pass=` + password, {
     mode: 'cors'
   })
   .then(response => response.text())
@@ -179,7 +179,7 @@ function serverRegister() {
         localStorage.setItem('nikka', document.getElementById("nikkanotice").checked);
         localStorage.setItem('kadai', document.getElementById("kadainotice").checked);
 
-        fetch(`https://api.launchpencil.f5.si/zikanwari/notification`, {
+        fetch(`https://zikanwari.xsrv.jp/zikanwari/notification`, {
           method: "POST",
           mode: 'cors',
           body: JSON.stringify({

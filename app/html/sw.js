@@ -1,4 +1,4 @@
-const CACHE_NAME = `zikanwari-v1.6.10`;
+const CACHE_NAME = `zikanwari-v1.6.11`;
 
 self.addEventListener('install', event => {
   event.waitUntil((async () => {
@@ -11,7 +11,7 @@ self.addEventListener('install', event => {
 
 self.addEventListener('fetch', event => {
     // 外部のリソースかどうかを判定する
-  if (event.request.url.startsWith('https://api.launchpencil.f5.si')) {
+  if (event.request.url.startsWith('https://zikanwari.xsrv.jp/zikanwari') || event.request.url.startsWith('https://zikanwari.xsrv.jp/todo')) {
     // 外部のリソースの場合は、キャッシュに追加しない
     return;
   }
